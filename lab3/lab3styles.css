@@ -1,0 +1,400 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Use rem for consistent padding based on font size */
+    padding: 1.5rem 5%;
+    background-color: #333;
+    color: white;
+}
+
+#header nav ul li {
+    /* Use rem for space between links */
+    margin-left: 2rem;
+}
+
+@media (max-width: 600px) {
+    #header {
+        padding: 1rem 5%;
+    }
+    #header nav ul li {
+        /* Reduce spacing on small screens */
+        margin: 0.5rem 0;
+    }
+}
+#hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Use vh to make the height relative to the viewport height */
+    height: 85vh;
+    /* Use % for left/right padding */
+    padding: 0 5%;
+    background-color: #f4f4f4;
+}
+
+.hero-content {
+    /* max-width helps contain the text */
+    max-width: 45rem; /* 450px */
+}
+
+@media (max-width: 900px) {
+    #hero {
+        flex-direction: column;
+        height: auto;
+        /* Use rem for top/bottom padding */
+        padding: 6rem 5%;
+    }
+
+    .profile-image-container img {
+        /* Use % to scale the image relative to its parent container */
+        max-width: 70%;
+    }
+}
+
+/* Optional: Style the image to ensure it fits well */
+.profile-image-container img {
+    max-width: 90%; /* Ensure image is responsive */
+    height: auto;
+    border-radius: 50%; /* Example: for a round profile photo */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+section {
+    /* Use rem for section padding */
+    padding: 6rem 5%;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    /* minmax is already flexible! */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /* Use rem for gap */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.skill-card {
+    /* Use rem for padding and border-radius */
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    /* minmax is already flexible! */
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    /* Use rem for gap */
+    gap: 3rem;
+    padding: 2rem 5%;
+}
+
+.project-card {
+    /* Use rem for padding and border-radius */
+    padding: 2.5rem;
+    border-radius: 1rem;
+}
+/* --- Default (Mobile-First) Styles --- */
+
+/* Set a max width on the main body content for better readability */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Remove default body margin */
+    padding: 0;
+}
+
+/* Ensure sections have padding on smaller screens */
+section {
+    padding: 40px 5%;
+}
+
+:root {
+    /* Define font stack variables for easy switching */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Base setup (Recap: 1rem = 10px) */
+html {
+    font-size: 62.5%;
+}
+
+/* 1. Readable Body Text (Open Sans) */
+body {
+    font-family: var(--font-body);
+    font-size: 1.6rem; /* 16px - highly readable */
+    line-height: 1.7; /* Increased line-height for better flow */
+    color: #333; /* Dark gray for soft contrast */
+}
+
+/* 2. Big Headings (H1 - Poppins, Bold) */
+h1 {
+    font-family: var(--font-heading);
+    font-size: 5.6rem; /* 56px - large and impactful */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #2c3e50; /* A darker, modern color */
+}
+
+/* 3. Medium Subheadings (H2 - Poppins, Section Titles) */
+h2 {
+    font-family: var(--font-heading);
+    font-size: 3.8rem; /* 38px - clear section delineation */
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    text-align: center; /* Center section titles */
+}
+
+/* 4. Smaller Subheadings (H3 - Poppins, Card Titles) */
+h3 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem; /* 24px - clear card titles */
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Adjust text size on smaller screens for better readability */
+@media (max-width: 768px) {
+    h1 { font-size: 4.2rem; }
+    h2 { font-size: 3.0rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 3.4rem; }
+    h2 { font-size: 2.6rem; }
+    p { font-size: 1.5rem; }
+}
+:root {
+    /* Color Palette */
+    --color-primary: #007BFF;       /* Bright Blue (Accent) */
+    --color-text: #333333;          /* Dark Charcoal */
+    --color-background-light: #F4F4F4; /* Light Gray */
+    --color-white: #FFFFFF;
+    
+    /* Font Variables (from previous step) */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Apply base colors */
+body {
+    background-color: var(--color-white);
+    color: var(--color-text);
+}
+
+.button, a {
+    color: var(--color-primary); /* Use primary color for links and buttons */
+}
+
+/* Example: Styling the Hero and other sections */
+#hero {
+    background-color: var(--color-background-light);
+}
+
+#skills, #contact {
+    background-color: var(--color-white);
+}
+/* 1. Define the Keyframe Animation */
+@keyframes color-cycle {
+    0%, 100% { 
+        color: var(--color-primary); /* Bright Blue */
+    }
+    33% { 
+        color: #2ECC71; /* Green secondary color */
+    }
+    66% { 
+        color: #FFC300; /* Yellow secondary color */
+    }
+}
+
+/* 2. Apply the Animation to the Target Element */
+.animated-title {
+    /* Apply the animation: name | duration | timing-function | iteration-count */
+    animation: color-cycle 5s ease-in-out infinite;
+    /* Optional: Ensure text remains bold/impactful */
+    font-weight: 700;
+}
+/* Apply smooth transition to all interactive elements */
+.button, 
+a, 
+.project-card, 
+.skill-card {
+    /* Transition applied to all properties over 0.3 seconds with an ease-out timing */
+    transition: all 0.3s ease-out;
+}
+/* Styling for the primary call-to-action button */
+.button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 1rem 3rem; /* Use rem for padding */
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Button Hover Effect: Lift and Shadow Darkening */
+.button:hover {
+    background-color: #0069D9; /* Slightly darker shade of primary color */
+    transform: translateY(-2px); /* Lifts the button slightly */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+}
+
+/* Link Hover Effect (Navigation and Footers) */
+a:hover {
+    color: var(--color-primary); /* Ensures links change color */
+    opacity: 0.8; /* Slight fade for subtle feedback */
+}
+/* Project Card Hover Effect: Lift and Enhanced Shadow */
+.project-card:hover {
+    /* Lifts the card up by 5px */
+    transform: translateY(-5px); 
+    /* Significantly enhanced shadow for the 'floating' effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+/* Skill Card Hover Effect: Subtle Lift */
+.skill-card:hover {
+    /* Lifts the card up by 2px */
+    transform: translateY(-2px); 
+    /* Subtle shadow change */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Slightly change background color */
+    background-color: #e0e0e0;
+}
+
+/* 1. Define the Fade-In Keyframe */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below its final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Apply Animation to Hero Content */
+.hero-content {
+    /* (Existing styles...) */
+    max-width: 45rem;
+    
+    /* Apply the Fade-in animation */
+    opacity: 0; /* Important: Start hidden */
+    animation: fadeIn 1s ease-out 0.5s forwards; /* 1s duration, ease-out, starts after 0.5s delay, keeps final state */
+}
+
+/* Initial State (Hidden and slightly offset) */
+.hidden {
+    opacity: 0;
+    filter: blur(5px); /* Add a subtle blur effect */
+    transform: translateX(-100%); /* Slide in from the left */
+    transition: opacity 0.8s, filter 0.8s, transform 0.8s; /* Smooth transition */
+}
+
+/* State when the element is visible */
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* --- Contact Form Styling --- */
+.contact-form {
+    max-width: 60rem; /* Limit form width for readability (600px) */
+    margin: 0 auto; /* Center the form on the page */
+    padding: 3rem;
+    background: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 2rem; /* Space between fields */
+}
+
+.contact-form label {
+    display: block; /* Make labels take up their own line */
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+    font-size: 1.6rem;
+    font-family: var(--font-body);
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary); /* Highlight on focus */
+    outline: none;
+}
+
+/* --- Footer Styling --- */
+#footer {
+    background-color: #2c3e50; /* Dark background for strong contrast */
+    color: var(--color-white);
+    padding: 3rem 5%;
+    font-size: 1.4rem;
+}
+
+.footer-content {
+    display: flex; /* Activate Flexbox */
+    justify-content: space-between; /* Space out the three main columns */
+    align-items: center; /* Vertically align items */
+    max-width: 120rem; /* Center and constrain width */
+    margin: 0 auto;
+}
+
+.footer-links a,
+.social-icons a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-left: 2rem; /* Spacing between links/icons */
+    opacity: 0.7;
+}
+
+.footer-links a:hover,
+.social-icons a:hover {
+    opacity: 1;
+    color: var(--color-primary); /* Highlight with primary color on hover */
+}
+
+/* --- Responsive Footer --- */
+@media (max-width: 768px) {
+    .footer-content {
+        /* Stack everything vertically on mobile/tablet */
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .copyright {
+        margin-bottom: 2rem;
+    }
+    
+    .footer-links {
+        order: -1; /* Move links to the top of the stack */
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links a,
+    .social-icons a {
+        margin: 0 1rem; /* Adjust horizontal spacing */
+    }
+}
